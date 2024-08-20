@@ -1,5 +1,5 @@
 import React from "react";
-import ViewUsers from "./view-users";
+import ViewUsers from "../view-users";
 
 const DashCards = () => {
   return (

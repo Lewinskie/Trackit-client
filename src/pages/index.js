@@ -4,8 +4,8 @@ import Footer from "../components/footer";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import Sidebar from "../components/sidebar/sidebar";
 import SidebarOverlay from "../components/sidebar/sidebar-overlay";
-import DashNav from "../components/dash-nav";
-import DashContent from "../components/dash-content";
+import DashNav from "../components/dashboard/dash-nav";
+import DashContent from "../components/dashboard/dash-content";
 
 export default function Home() {
   const { isLoading, error, user } = useUser();

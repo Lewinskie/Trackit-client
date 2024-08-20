@@ -1,8 +1,8 @@
 import React from "react";
 import DashTable from "./dash-table";
-import ViewUsers from "./view-users";
+import ViewUsers from "../view-users";
 import DashCards from "./dash-cards";
-import UsersTableSummary from "./users-table-summary";
+import UsersTableSummary from "../users-table-summary";
 
 const DashContent = () => {
   return (
