@@ -8,21 +8,21 @@ const LandingPage = () => {
       <Navbar />
       <LandingHero />
 
-      <section class="bg-white">
-        <div class="max-w-5xl px-6 py-16 mx-auto">
-          <h2 class="text-3xl font-semibold text-gray-800">
+      <section className="bg-white">
+        <div className="max-w-5xl px-6 py-16 mx-auto">
+          <h2 className="text-3xl font-semibold text-gray-800">
             Lorem ipsum dolor sit amet, <br /> consectetur adipiscing
           </h2>
-          <p class="max-w-lg mt-4 text-gray-600">
+          <p className="max-w-lg mt-4 text-gray-600">
             Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
             cupidatat non proident, sunt in culpa qui officia deserunt mollit
             anim id est laborum.
           </p>
-          <div class="grid gap-8 mt-10 md:mt-20 md:grid-cols-2">
-            <div class="flex space-x-4">
+          <div className="grid gap-8 mt-10 md:mt-20 md:grid-cols-2">
+            <div className="flex space-x-4">
               <svg
-                class="w-6 h-6 text-gray-500"
+                className="w-6 h-6 text-gray-500"
                 viewBox="0 0 50 50"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -35,19 +35,19 @@ const LandingPage = () => {
               </svg>
 
               <div>
-                <h4 class="text-xl font-medium text-gray-800">
+                <h4 className="text-xl font-medium text-gray-800">
                   Design concept
                 </h4>
-                <p class="max-w-lg mt-4 text-gray-600">
+                <p className="max-w-lg mt-4 text-gray-600">
                   Vitae nulla nunc euismod vel nunc euismod velpretium tellus
                   accumsan nulla nunc euismod ve semper.
                 </p>
               </div>
             </div>
 
-            <div class="flex space-x-4">
+            <div className="flex space-x-4">
               <svg
-                class="w-6 h-6 text-gray-500"
+                className="w-6 h-6 text-gray-500"
                 viewBox="0 0 50 50"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -60,10 +60,10 @@ const LandingPage = () => {
               </svg>
 
               <div>
-                <h4 class="text-xl font-medium text-gray-800">
+                <h4 className="text-xl font-medium text-gray-800">
                   Developing websites
                 </h4>
-                <p class="max-w-lg mt-4 text-gray-600">
+                <p className="max-w-lg mt-4 text-gray-600">
                   Vitae nulla euismod velpretium tellus accumsan nulla nunc
                   euismod ve semper. Vitae nulla euismod velpretium tellus
                   accumsan nulla nunc euismod ve semper. Vitae nulla euismod
@@ -75,21 +75,21 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section class="bg-white">
-        <div class="max-w-5xl px-6 py-16 mx-auto">
-          <div class="px-8 py-12 bg-gray-800 rounded-md md:px-20 md:flex md:items-center md:justify-between">
+      <section className="bg-white">
+        <div className="max-w-5xl px-6 py-16 mx-auto">
+          <div className="px-8 py-12 bg-gray-800 rounded-md md:px-20 md:flex md:items-center md:justify-between">
             <div>
-              <h3 class="text-2xl font-semibold text-white">
+              <h3 className="text-2xl font-semibold text-white">
                 Lorem ipsum dolor sit amet
               </h3>
-              <p class="max-w-md mt-4 text-gray-400">
+              <p className="max-w-md mt-4 text-gray-400">
                 Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
                 volutpat, viverra magna risus aliquam massa.
               </p>
             </div>
 
             <a
-              class="block px-8 py-2 mt-6 text-lg font-medium text-center text-white transition-colors duration-300 transform bg-indigo-600 rounded md:mt-0 hover:bg-indigo-500"
+              className="block px-8 py-2 mt-6 text-lg font-medium text-center text-white transition-colors duration-300 transform bg-indigo-600 rounded md:mt-0 hover:bg-indigo-500"
               href="#"
             >
               Get In Touch
@@ -98,38 +98,41 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section class="bg-white">
-        <div class="max-w-5xl px-6 py-16 mx-auto">
-          <div class="md:flex md:justify-between">
-            <h2 class="text-3xl font-semibold text-gray-800">
+      <section className="bg-white">
+        <div className="max-w-5xl px-6 py-16 mx-auto">
+          <div className="md:flex md:justify-between">
+            <h2 className="text-3xl font-semibold text-gray-800">
               Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit,
               sed do eiusmod
             </h2>
-            <a href="#" class="block mt-6 text-indigo-700 underline md:mt-0">
+            <a
+              href="#"
+              className="block mt-6 text-indigo-700 underline md:mt-0"
+            >
               Experienced team
             </a>
           </div>
 
-          <div class="grid gap-8 mt-10 md:grid-cols-2 lg:grid-cols-3">
-            <div class="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md">
-              <h2 class="text-xl font-medium text-gray-800">Audio</h2>
-              <p class="max-w-md mt-4 text-gray-400">
+          <div className="grid gap-8 mt-10 md:grid-cols-2 lg:grid-cols-3">
+            <div className="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md">
+              <h2 className="text-xl font-medium text-gray-800">Audio</h2>
+              <p className="max-w-md mt-4 text-gray-400">
                 Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
                 volutpat, viverra magna risus aliquam massa.
               </p>
             </div>
 
-            <div class="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md">
-              <h2 class="text-xl font-medium text-gray-800">Audio</h2>
-              <p class="max-w-md mt-4 text-gray-400">
+            <div className="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md">
+              <h2 className="text-xl font-medium text-gray-800">Audio</h2>
+              <p className="max-w-md mt-4 text-gray-400">
                 Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
                 volutpat, viverra magna risus aliquam massa.
               </p>
             </div>
 
-            <div class="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md">
-              <h2 class="text-xl font-medium text-gray-800">Audio</h2>
-              <p class="max-w-md mt-4 text-gray-400">
+            <div className="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md">
+              <h2 className="text-xl font-medium text-gray-800">Audio</h2>
+              <p className="max-w-md mt-4 text-gray-400">
                 Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
                 volutpat, viverra magna risus aliquam massa.
               </p>
