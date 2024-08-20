@@ -2,8 +2,8 @@ import Head from "next/head";
 import LandingPage from "../components/landing";
 import Footer from "../components/footer";
 import { useUser } from "@auth0/nextjs-auth0/client";
-import Sidebar from "../components/sidebar";
-import SidebarOverlay from "../components/sidebar-overlay";
+import Sidebar from "../components/sidebar/sidebar";
+import SidebarOverlay from "../components/sidebar/sidebar-overlay";
 import DashNav from "../components/dash-nav";
 import DashContent from "../components/dash-content";
 
