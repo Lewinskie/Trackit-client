@@ -2,10 +2,7 @@ import Head from "next/head";
 import LandingPage from "../components/landing";
 import Footer from "../components/footer";
 import { useUser } from "@auth0/nextjs-auth0/client";
-import Sidebar from "../components/sidebar/sidebar";
-import SidebarOverlay from "../components/sidebar/sidebar-overlay";
-import DashNav from "../components/dashboard/dash-nav";
-import DashContent from "../components/dashboard/dash-content";
+import MainDashboard from "../components/dashboard";
 
 export default function Home() {
   const { isLoading, error, user } = useUser();
@@ -17,12 +14,7 @@ export default function Home() {
       </Head>
       {user ? (
         <div className="text-gray-800 font-inter">
-          <Sidebar />
-          <SidebarOverlay />
-          <div className="w-full md:w-[calc(100%-256px)] md:ml-64 bg-gray-200 min-h-screen transition-all main">
-            <DashNav />
-            <DashContent />
-          </div>
+          <MainDashboard />
         </div>
       ) : (
         <>
