@@ -4,6 +4,11 @@ import React from "react";
 
 const DashProfile = (props) => {
   const { user, isLoading } = useUser();
+  const { logout } = useAuth0();
+
+  const handleLogout = () => {
+    logout({ returnTo: window.location.origin });
+  };
 
   return (
     <li className="dropdown ml-3 relative">
@@ -52,16 +57,13 @@ const DashProfile = (props) => {
           </a>
         </li>
         <li>
-          <form method="POST" action="">
-            <a
-              role="menuitem"
-              className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-[#f84525] hover:bg-gray-50 cursor-pointer"
-              onclick="event.preventDefault();
-                      this.closest('form').submit();"
-            >
-              Log Out
-            </a>
-          </form>
+          <a
+            role="menuitem"
+            className="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-[#f84525] hover:bg-gray-50 cursor-pointer"
+            onClick={handleLogout}
+          >
+            Log Out
+          </a>
         </li>
       </ul>
     </li>
