@@ -3,16 +3,19 @@ import React, { useState } from "react";
 import { FullScreenIcon, ListIcon, SearchIcon } from "./icons";
 import DashProfile from "./dash-profile";
 
-const DashNav = () => {
+const DashNav = (props) => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   // Function to toggle the dropdown visibility
   const toggleDropdown = () => {
     setIsDropdownVisible(!isDropdownVisible);
-    console.log("toglk");
   };
+  // bg-[rgb(248,244,243)]
   return (
-    <div className="py-2 px-6 bg-[rgb(248,244,243)] flex items-center shadow-md shadow-black/5 sticky top-0 left-0 z-30">
-      <Btn className="text-lg text-gray-900 font-semibold sidebar-toggle">
+    <div className="py-2 px-6  flex items-center shadow-md shadow-black/5 sticky top-0 left-0 z-30">
+      <Btn
+        className="text-lg text-gray-900 font-semibold sidebar-toggle"
+        onClick={props.toggleSidebar}
+      >
         <ListIcon
           className="h-6 w-6 "
           style={{ fill: "gray", transform: "", msfilter: "" }}
@@ -38,7 +41,7 @@ const DashNav = () => {
           </div>
         </li>
 
-        <Btn>
+        <Btn onClick={props.toggleFullscreen}>
           <FullScreenIcon className="hover:bg-gray-100 rounded-full" />
         </Btn>
         <DashProfile
