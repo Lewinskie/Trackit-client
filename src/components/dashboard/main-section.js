@@ -7,7 +7,11 @@ import Roughwork from "./cards/roughwork";
 
 const MainSection = (props) => {
   return (
-    <main className="w-full md:w-[calc(100%-256px)] md:ml-64 min-h-screen transition-all main bg-blue-600">
+    <main
+      className={`min-h-screen bg-gray-200 md:[calc(100%-256px) transition-all duration-300 ${
+        props.isSidebarOpen ? "ml-60" : "ml-0"
+      }`}
+    >
       <DashNav
         toggleFullscreen={props.toggleFullscreen}
         toggleSidebar={props.toggleSidebar}

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import DashNav from "./dash-nav";
 import SideNav from "./side-nav";
 import MainSection from "./main-section";
 
@@ -24,7 +23,7 @@ const MainDashboard = () => {
     console.log(isSidebarOpen);
   };
   return (
-    <>
+    <div>
       <title>Admin Panel</title>
       <SideNav isSidebarOpen={isSidebarOpen} />
       <MainSection
@@ -33,7 +32,7 @@ const MainDashboard = () => {
         toggleFullscreen={toggleFullscreen}
         toggleDropdown={toggleDropdown}
       />
-    </>
+    </div>
   );
 };
 
