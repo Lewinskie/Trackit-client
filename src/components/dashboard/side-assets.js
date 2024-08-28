@@ -1,5 +1,5 @@
 import React from "react";
-import { PlusIcon, ListIcon, InfoIcon } from "./icons";
+import { PlusIcon, ListIcon, InfoIcon } from "../../lib/icons";
 
 const SideAssets = () => {
   const items = [

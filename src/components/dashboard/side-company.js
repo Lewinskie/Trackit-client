@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { InfoIcon, ListIcon, PlusIcon, TrashIcon } from "./icons";
+import { InfoIcon, ListIcon, PlusIcon, TrashIcon } from "../../lib/icons";
 
 const SideCompany = () => {
   const items = [

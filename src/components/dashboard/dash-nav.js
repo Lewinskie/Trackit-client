@@ -1,6 +1,6 @@
 import Btn from "@/src/utils/btn";
 import React, { useState } from "react";
-import { FullScreenIcon, ListIcon, SearchIcon } from "./icons";
+import { FullScreenIcon, ListIcon, SearchIcon } from "../../lib/icons";
 import DashProfile from "./dash-profile";
 
 const DashNav = (props) => {
