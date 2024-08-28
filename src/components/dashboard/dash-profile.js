@@ -4,10 +4,12 @@ import React from "react";
 
 const DashProfile = (props) => {
   const { user, isLoading } = useUser();
-  const { logout } = useAuth0();
-
-  const handleLogout = () => {
-    logout({ returnTo: window.location.origin });
+  const handleLogout = async () => {
+    try {
+      window.location.href = "/api/auth/logout";
+    } catch (error) {
+      console.error("Logout failed", error);
+    }
   };
 
   return (

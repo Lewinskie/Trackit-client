@@ -1,7 +1,8 @@
 import React from "react";
+import withAuth from "../../lib/with-auth";
 
 const CompanyDetails = () => {
   return <div>CompanyDetails</div>;
 };
 
-export default CompanyDetails;
+export default withAuth(CompanyDetails);
