@@ -3,22 +3,24 @@ import React, { useState } from "react";
 import { FullScreenIcon, ListIcon, SearchIcon } from "../../lib/icons";
 import DashProfile from "./dash-profile";
 
-const DashNav = (props) => {
+const DashNav = ({
+  toggleSidebar,
+  toggleFullscreen,
+  isDropdownOpen,
+  toggleDropdown,
+}) => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   // Function to toggle the dropdown visibility
-  const toggleDropdown = () => {
+  const handleToggleDropdown = () => {
     setIsDropdownVisible(!isDropdownVisible);
   };
   return (
     <div className="py-2 px-6 bg-[rgb(248,244,243)]  flex items-center shadow-md shadow-black/5 sticky top-0 left-0 z-30">
       <Btn
         className="text-lg text-gray-900 font-semibold sidebar-toggle"
-        onClick={props.toggleSidebar}
+        onClick={toggleSidebar}
       >
-        <ListIcon
-          className="h-6 w-6 "
-          style={{ fill: "gray", transform: "", msfilter: "" }}
-        />
+        <ListIcon className="h-6 w-6 " style={{ fill: "gray" }} />
       </Btn>
 
       <ul className="ml-auto flex items-center">
@@ -40,11 +42,11 @@ const DashNav = (props) => {
           </div>
         </li>
 
-        <Btn onClick={props.toggleFullscreen}>
+        <Btn onClick={toggleFullscreen}>
           <FullScreenIcon className="hover:bg-gray-100 rounded-full" />
         </Btn>
         <DashProfile
-          toggleDropdown={toggleDropdown}
+          handleToggleDropdown={handleToggleDropdown}
           isDropdownVisible={isDropdownVisible}
         />
       </ul>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SideLogo from "./side-logo";
 import SideCompany from "./side-company";
 import SideAssets from "./side-assets";
@@ -12,7 +12,7 @@ const SideNav = (props) => {
       }`}
     >
       <SideLogo />
-      <ul className="mt-8">
+      <ul className="mt-6">
         <SideCompany />
         <SideAssets />
         <SideStaff />

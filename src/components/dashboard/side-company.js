@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { InfoIcon, ListIcon, PlusIcon, TrashIcon } from "../../lib/icons";
 
@@ -7,22 +6,17 @@ const SideCompany = () => {
     {
       title: "New Company",
       icon: <PlusIcon className="w-4 h-4 mr-3 text-lg text-gray-700" />,
-      link: "/company/new",
+      link: "/companies/new",
     },
     {
       title: "List Companies",
       icon: <ListIcon className="w-4 h-4 mr-3 text-lg text-gray-700" />,
-      link: "/company/list",
-    },
-    {
-      title: "Company Details",
-      icon: <InfoIcon className="w-4 h-4 mr-3 text-lg text-gray-700" />,
-      link: "/company/detail",
+      link: "/companies",
     },
     // {
-    //   title: "Company Delete",
-    //   icon: <TrashIcon className="w-4 h-4 mr-3 text-lg text-gray-700" />,
-    //   link: "/company/delete",
+    //   title: "Company Details",
+    //   icon: <InfoIcon className="w-4 h-4 mr-3 text-lg text-gray-700" />,
+    //   link: "/companies/detail",
     // },
   ];
 
@@ -30,9 +24,8 @@ const SideCompany = () => {
     <>
       <span className="text-gray-400 font-bold ">COMPANIES</span>
       {items.map((item, index) => (
-        <li className="mb-1 mt-4 group">
+        <li className="mb-1 mt-3 group" key={index}>
           <a
-            key={index}
             href={item.link}
             className="flex font-semibold items-center py-2 px-4 text-gray-900 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100"
           >

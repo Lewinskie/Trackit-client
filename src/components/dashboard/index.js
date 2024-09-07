@@ -1,30 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import SideNav from "./side-nav";
 import MainSection from "./main-section";
+import Head from "next/head";
 
-const MainDashboard = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const toggleFullscreen = () => {
-    if (document.fullscreenElement) {
-      document.exitFullscreen();
-    } else {
-      document.documentElement.requestFullscreen();
-    }
-  };
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-    console.log(isSidebarOpen);
-  };
+const MainDashboard = ({
+  toggleSidebar,
+  isSidebarOpen,
+  toggleFullscreen,
+  toggleDropdown,
+}) => {
   return (
     <div>
-      <title>Admin Panel</title>
+      <Head>
+        <title>Admin Panel</title>
+      </Head>
       <SideNav isSidebarOpen={isSidebarOpen} />
       <MainSection
         toggleSidebar={toggleSidebar}

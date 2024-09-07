@@ -2,14 +2,22 @@ import "@/styles/globals.css";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-// import { useRouter } from "next/router";
+import DashboardLayout from "../components/dashboard/dashboard-layout";
+// import DashNav from "../components/dashboard/dash-nav";
+
 config.autoAddCss = false;
 
-// const noAuthRequired = ["/"]; // list of routes that dont need protection
 export default function App({ Component, pageProps }) {
+  const useDashboardLayout = Component.useDashboardLayout !== false;
   return (
     <UserProvider>
-      <Component {...pageProps} />
+      {useDashboardLayout ? (
+        <DashboardLayout>
+          <Component {...pageProps} />
+        </DashboardLayout>
+      ) : (
+        <Component {...pageProps} />
+      )}
     </UserProvider>
   );
 }

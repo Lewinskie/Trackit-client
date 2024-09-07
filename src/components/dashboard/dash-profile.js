@@ -1,9 +1,11 @@
 import Btn from "@/src/utils/btn";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import React from "react";
+import Loading from "../../lib/loading";
 
 const DashProfile = (props) => {
   const { user, isLoading } = useUser();
+
   const handleLogout = async () => {
     try {
       window.location.href = "/api/auth/logout";
@@ -11,12 +13,18 @@ const DashProfile = (props) => {
       console.error("Logout failed", error);
     }
   };
+  if (isLoading) {
+    return <Loading />;
+  }
+  if (!user) {
+    return <div>User not logged in</div>;
+  }
 
   return (
     <li className="dropdown ml-3 relative">
       <Btn
         className="dropdown-toggle flex items-center"
-        onClick={props.toggleDropdown}
+        onClick={props.handleToggleDropdown}
       >
         <div className="flex-shrink-0 w-10 h-10 relative">
           <div className="p-1 bg-white rounded-full focus:outline-none focus:ring">

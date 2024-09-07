@@ -13,7 +13,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             <a
               className="text-xl font-bold text-white transition-colors duration-300 transform md:text-2xl hover:text-indigo-400"
-              href="#"
+              href="/"
             >
               Track IT
             </a>
