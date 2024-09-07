@@ -1,33 +1,84 @@
+/* styles/globals.css */
+
+/* Base styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* Light mode */
+.bg-primary {
+  background-color: theme("colors.light-primary");
+}
+.card-bg {
+  background-color: theme("colors.light-card-bg");
+}
+.text-h1 {
+  color: theme("colors.light-text-h1");
+}
+.text-h2 {
+  color: theme("colors.light-text-h2");
+}
+.text-p {
+  color: theme("colors.light-text-p");
+}
+.link {
+  color: theme("colors.light-link");
+}
+.link:hover {
+  color: theme("colors.light-btn");
+}
+.btn {
+  background-color: theme("colors.light-btn");
+  border-color: theme("colors.light-btn");
+}
+.btn:hover {
+  background-color: theme("colors.btn");
+}
+.btn:active {
+  background-color: theme("colors.btn");
+}
+.footer-bg {
+  background-color: theme("colors.light-footer-bg");
+}
+.footer-text {
+  color: theme("colors.light-footer-text");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Dark mode */
+.dark .bg-primary {
+  background-color: theme("colors.primary");
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.dark .card-bg {
+  background-color: theme("colors.card-bg");
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.dark .text-h1 {
+  color: theme("colors.text-h1");
+}
+.dark .text-h2 {
+  color: theme("colors.text-h2");
+}
+.dark .text-p {
+  color: theme("colors.text-p");
+}
+.dark .link {
+  color: theme("colors.link");
+}
+.dark .link:hover {
+  color: theme("colors.btn");
+}
+.dark .btn {
+  background-color: theme("colors.btn");
+  border-color: theme("colors.btn");
+}
+.dark .btn:hover {
+  background-color: theme("colors.btn");
+}
+.dark .btn:active {
+  background-color: theme("colors.btn");
+}
+.dark .footer-bg {
+  background-color: theme("colors.footer-bg");
+}
+.dark .footer-text {
+  color: theme("colors.footer-text");
 }

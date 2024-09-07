@@ -6,10 +6,10 @@ const SideLogo = () => {
       href="/"
       className="flex items-center pb-4 mt-1 mb-6 border-b border-b-gray-800"
     >
-      <h2 className="font-bold text-2xl text-gray-600">
-        TRACK
+      <h1 className="font-bold text-2xl text-h1">
+        TRACK&nbsp;
         <span className="bg-[#f84525] text-white px-2 rounded-md">IT</span>
-      </h2>
+      </h1>
     </a>
   );
 };

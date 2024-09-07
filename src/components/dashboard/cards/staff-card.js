@@ -2,7 +2,7 @@ import React from "react";
 
 const StaffCard = () => {
   return (
-    <div className="bg-white rounded-md border border-gray-100 p-6 shadow-md shadow-black/5">
+    <div className="card-bg rounded-lg p-6 shadow-lg">
       <div className="flex justify-between mb-6">
         <div>
           <div className="text-2xl font-semibold mb-1">100</div>

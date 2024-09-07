@@ -6,7 +6,7 @@ import Roughwork from "./cards/roughwork";
 
 const MainSection = () => {
   return (
-    <main className="min-h-screen bg-gray-200 md:[calc(100%-256px) transition-all duration-300">
+    <main className="min-h-screen bg-primary md:[calc(100%-256px) ">
       <div className="p-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
           <CompaniesCards />
