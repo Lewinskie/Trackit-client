@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SideNav from "../dashboard/side-nav";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import Loading from "../../lib/loading";
 import DashNav from "./dash-nav";
 import Error from "../../lib/error";
@@ -32,52 +31,58 @@ const DashboardLayout = ({ children }) => {
   // Function to toggle sidebar visibility
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
-    console.log(isSidebarOpen);
   };
- // Function to toggle dark/light mode and persist the preference
- const toggleDarkMode = () => {
-  setDarkMode((prevMode) => {
-    const newMode = !prevMode;
-    document.documentElement.classList.toggle("dark", newMode);
-    localStorage.setItem("darkMode", newMode ? "enabled" : "disabled");
-    return newMode;
-  });
-};
 
-// Load dark mode preference from localStorage on component mount
-useEffect(() => {
-  const storedDarkMode = localStorage.getItem("darkMode");
-  if (storedDarkMode === "enabled") {
-    setDarkMode(true);
-    document.documentElement.classList.add("dark");
-  } else {
-    setDarkMode(false);
-    document.documentElement.classList.remove("dark");
-  }
-}, []);
+  // Function to toggle dark/light mode and persist the preference
+  const toggleDarkMode = () => {
+    setDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      document.documentElement.classList.toggle("dark", newMode);
+      localStorage.setItem("darkMode", newMode ? "enabled" : "disabled");
+      return newMode;
+    });
+  };
+
+  // Load dark mode preference from localStorage on component mount
+  useEffect(() => {
+    const storedDarkMode = localStorage.getItem("darkMode");
+    if (storedDarkMode === "enabled") {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setDarkMode(false);
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
 
   useEffect(() => {
     if (!isLoading && !user) {
       router.push("/api/auth/login");
     }
   }, [user, isLoading, router]);
+
   if (isLoading) {
     return <Loading />;
   }
+
   if (error) {
     return <Error error={error} />;
   }
+
   return (
-    <div className={`flex ${darkMode ? "dark" : ""}`}>
+    <div className={`flex min-h-screen ${darkMode ? "dark" : ""}`}>
+      {/* Sidebar */}
       <div
         className={`${
           isSidebarOpen ? "w-60" : "w-0"
-        } transition-all duration-300 overflow-hidden`}
+        } transition-all duration-300 overflow-hidden bg-light-card-bg dark:bg-card-bg`}
       >
         <SideNav isSidebarOpen={isSidebarOpen} />
       </div>
 
-      <div className="flex-1 min-h-screen  md:[calc(100%-256px) transition-all duration-300 ">
+      {/* Main Content Area */}
+      <div className="flex-1 bg-light-primary dark:bg-primary min-h-screen transition-all duration-300">
+        {/* Dashboard Navigation */}
         <DashNav
           toggleDropdown={toggleDropdown}
           toggleFullscreen={toggleFullscreen}
@@ -85,14 +90,17 @@ useEffect(() => {
           toggleDarkMode={toggleDarkMode}
           darkMode={darkMode}
         />
-        {React.Children.map(children, (child) =>
-          React.cloneElement(child, {
-            toggleSidebar,
-            toggleDropdown,
-            toggleFullscreen,
-            isSidebarOpen,
-          })
-        )}
+        {/* Main Content */}
+        <main className="p-4 md:p-6 lg:p-8 text-light-text-h1 dark:text-text-h1">
+          {React.Children.map(children, (child) =>
+            React.cloneElement(child, {
+              toggleSidebar,
+              toggleDropdown,
+              toggleFullscreen,
+              isSidebarOpen,
+            })
+          )}
+        </main>
       </div>
     </div>
   );

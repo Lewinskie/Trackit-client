@@ -4,7 +4,7 @@ const SideLogo = () => {
   return (
     <a
       href="/"
-      className="flex items-center pb-4 mt-1 mb-6 border-b border-b-gray-800"
+      className="flex items-center pb-4 mt-1 mb-6"
     >
       <h1 className="font-bold text-2xl text-h1">
         TRACK&nbsp;
